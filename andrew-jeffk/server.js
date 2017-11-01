@@ -28,6 +28,10 @@ app.get('/new', (req, res) => {
   res.sendFile('new.html', {root: './public'});
 })
 
+app.get('/*', (req, res) => {
+  res.send('<h1>404</h1><h2>This page does not exist!</h2>');
+})
+
 app.listen(PORT, () => {
   // DONE: Refactor this to arrow function, log to the console a message that lets you know which port your server has started on
   console.log(`Listening on ${PORT}`);
